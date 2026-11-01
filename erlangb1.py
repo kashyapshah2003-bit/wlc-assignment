@@ -39,9 +39,10 @@ channel_capacities = [10, 20, 30]
 plt.figure(figsize=(10, 6))
 
 for channels in channel_capacities:
-        # Calculate probabilities for the current channel capacity across all traffic values
-        blocking_probs = [erlang_b(t, channels) for t in traffic_values]
-        plt.plot(traffic_values, blocking_probs, label=f'{channels} Channels', linewidth=2)
+    
+    # Calculate probabilities for the current channel capacity across all traffic values
+    blocking_probs = [erlang_b(t, channels) for t in traffic_values]
+    plt.plot(traffic_values, blocking_probs, label=f'{channels} Channels', linewidth=2)
 
 # Format and display the plot
 plt.title('Erlang-B Blocking Probability vs. Offered Traffic', fontsize=14, pad=15)
